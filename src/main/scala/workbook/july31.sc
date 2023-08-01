@@ -382,6 +382,70 @@ List() ::: List(1,2,3)
 List(1,2,3) ::: List(4)
 List() ::: List(1,2,3) ::: List(4,5)
 
+val abcde = List('a','b','c','d','e')
+abcde.last
+abcde.init
+abcde.reverse
+
+abcde.take(2)
+abcde.drop(2)
+abcde.dropRight(2)
+abcde.take(10)
+abcde.drop(10)
+abcde.splitAt(2)
+abcde(2)
+abcde.apply(2)
+abcde.indices
+abcde.zipWithIndex
+abcde.zip(List(1,2,3))
+abcde.toString()
+abcde.mkString(" ")
+abcde.mkString
+abcde.mkString("["," ","]")
+abcde.mkString("")
+abcde.mkString("List(",",",")")
+
+val buf = new StringBuilder()
+abcde.addString(buf,"(",":",")")
+
+//conversions
+val arr=abcde.toArray
+arr.toString
+arr.toList
+
+val arr2 = new Array[String](10)
+List(1,2,3).map(_+1)
+val words = List("the","quick","brown","fox")
+words.map(_.length)
+words.map(x=>x.length)
+words.map(_.toList.reverse.mkString)
+words.map(_.toList)
+words.flatMap(_.toList)
+List(1,2,3,4,5).foreach(println)
+var sum = 0
+List(1,2,3,4,5).foreach(sum += _)
+sum
+List(1,2,3,4,5).filter(_ %2 == 0)
+words.filter(_.length == 3)
+List(1,2,3,4,5).partition(_ %2 == 0)
+List(1,2,3,4,5).find(_ %2 == 0).get
+List(1,2,3,4,5).find(_ <= 0)
+List(1,2,3,-4,5).take(2)
+List(1,2,3,-4,5).takeWhile(_>=0)
+words.takeWhile(_.startsWith("t"))
+words.dropWhile(_.startsWith("t"))
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
