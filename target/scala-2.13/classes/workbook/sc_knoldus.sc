@@ -1,5 +1,4 @@
 import scala.annotation.tailrec
-import scala.math.cos
 import scala.util.Try
 
 object WordCount {
@@ -113,91 +112,6 @@ object Calculator{
   }
 }
 Calculator.main()
-
-class Calc2(name:String,calType:String){
-  def this(name:String){
-    this("primary called","from single arg con")
-    println("single arg construct")
-  }
-  def this() {
-    this("casio")
-    println("calling from no arg to single arg")
-  }
-  println("executing from main constructor body")
-}
-object Calc2{
-  def main(): Unit = {
-    val c2 = new Calc2() //it is calling constructor with no args
-  }
-}
-Calc2.main()
-
-class Calc3(name:String){
-  private def add(num1:Int,num2:Int)=num1 + num2
-  override def toString: String = s"This is $name calculator"
-}
-
-object Calc3{
-  def main(): Unit = {
-    val c1 = new Calc3("casio")
-    println(c1.add(2,3))
-    println(c1)
-  }
-}
-Calc3.main()
-//if i change object name,i can't accessible add method
-//object Calc4{
-//  def main(): Unit = {
-//    val c1 = new Calc3("casio")
-//    println(c1.add(2,3))
-//    println(c1)
-//  }
-//}
-//Calc4.main()
-
-(x:Int)=> x+10
-(10)
-val f = (y:Int) => y + 10
-f(10)
-
-import scala.math.{Pi=>mypi}
-val Pi=3.1
-println(s"$Pi defined $mypi")
-
-//import scala.math.{Pi=> _,_}
-//val Pi=3.2
-println(Pi)
-
-trait Calc4{
-  def show(): Unit = {
-    println("implemented method in trait")
-  }
-  def getName:String
-  def getCost:Double
-  def calcType:String
-  val a =10
-}
-
-class Calc5(name:String,cost:Double,typ:String) extends Calc4{
-  override def getName: String = name
-
-  override def getCost: Double = cost
-
-  override def calcType: String = typ
-
-  override def show(): Unit = {
-    super.show()
-    println("printing from class as well")
-  }
-}
-val c5 = new Calc5("c5",2.5,"scientific")
-c5.getName
-c5.getCost
-c5.calcType
-c5.a
-c5.show()
-
-
 
 
 
